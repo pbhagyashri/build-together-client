@@ -1,4 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Karla:400,700|Lobster+Two");
-h1 {
-  color: #6985ac;
-  font-family: "Lobster Two", cursive; }
+.header-section {
+  background-color: #1f170f;
+  display: grid;
+  grid-template-columns: 65% auto;
+  grid-template-rows: auto; }
+
+.nav-section {
+  background-color: #1f170f;
+  text-align: center; }
+  .nav-section .nav-section__logo {
+    color: #6985ac;
+    font-family: "Lobster Two", cursive; }
+
+.header-section__image-container .header-section__hero-image {
+  width: 100%; }

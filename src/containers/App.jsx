@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import '../App.css';
+import Header from './Header'
 
 class App extends Component {
   render() {
     return (
-      <section>
-        <h1>Build Together</h1>
-        <h1>Add Home Here</h1>
-        <h1>Add Footer Here</h1>
+      <section className="main-section">
+        
+        <Header />
+        
+       
       </section>
     );
   }

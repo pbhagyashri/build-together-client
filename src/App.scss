@@ -2,8 +2,33 @@
 
 @import "./styles/variables.scss";
 
-
-h1 {
-  color: $light_blue;
-  font-family: $highlight_font;
+.header-section {
+  background-color: $brown;
+  display: grid;
+  grid-template-columns: 65% auto;
+  grid-template-rows: auto;
 }
+
+.nav-section {
+  background-color: $brown;  
+  text-align: center;
+
+  .nav-section__logo {
+    color: $light_blue;
+    font-family: $highlight_font;
+  }
+}
+
+.header-section__image-container {
+  
+
+  .header-section__hero-image {
+    width: 100%; 
+  }
+}
+
+
+
+
+
+

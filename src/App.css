@@ -25,7 +25,9 @@
     color: #6985ac;
     font-family: "Lobster Two", cursive;
     font-size: 2.5em;
-    vertical-align: middle; }
+    vertical-align: middle;
+    position: relative;
+    z-index: 9; }
 
 .nav-section__button--projects {
   display: block;
@@ -40,9 +42,13 @@
   font-weight: bold;
   border: 1px solid #1f170f;
   border-radius: 30px;
-  transition: all 1s; }
+  transition: all 500ms;
+  position: absolute;
+  z-index: 1;
+  top: 120px; }
 
 .nav-section__button--projects:hover {
+  color: transparent;
   width: 125px;
   height: 70px;
   border-radius: 130px;

@@ -37,24 +37,33 @@
     font-size: 2.5em;
     vertical-align: middle;
   }
+ 
+}
 
-  .nav-section__button--projects {
-    text-decoration: none;
-    color: $brown;
-    background-color: #ffa12e;
-    font-family: $main_font;
-    font-weight: bold;
-    padding: 10px;
-    
-    border: 1px solid $brown;
-    border-radius: 30px;
-    
-  }
+.nav-section__button--projects {
+  display: block;
+  width: 200px;
+  height: 25px;
+  margin-left: 80px;
+  text-decoration: none;
+  background-color: #ffa12e;
+  color: $brown;
+  padding-top: 5px;
+  font-family: $main_font;
+  font-weight: bold;
+  border: 1px solid $brown;
+  border-radius: 30px;
+  transition: all 1s;
 
-  .nav-section__button--projects:hover {
-    padding: 30px;
-    border-radius: 70px;
-  }
+}
+
+.nav-section__button--projects:hover {
+  
+  width: 125px;
+  height: 70px;
+  border-radius: 130px;
+  margin-left: 115px;
+  padding-top: 55px;
 }
 
 .footer {

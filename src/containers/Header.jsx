@@ -13,9 +13,9 @@ class Header extends Component {
         </div>
           
         <div className="nav-section">
-          <h1 className="nav-section__logo">Build Together</h1>
           <nav  className="nav-section__navigation">
-            <a href="#" className="nav-section__button--projects">Explore Open Projects</a>
+          <h1 className="nav-section__logo">Build Together</h1>
+              <a href="#" className="nav-section__button--projects">Open Projects</a>
           </nav>
         </div>
 

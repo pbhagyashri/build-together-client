@@ -16,6 +16,7 @@
   display: grid;
   grid-template-columns: 70% 1fr;
   grid-template-rows: 100vh;
+  overflow: hidden;
 }
 
 
@@ -31,33 +32,46 @@
     color: $light_blue;
     font-family: $highlight_font;
     font-size: 2.5em;
-    position: relative;
-    z-index: 9;
   }
 
-  
+  .nav-section__dash {
+    color: #fff;
+    font-size: 1.8em;
+    padding-bottom: 20px;
+  }
 
   .nav-section__subtitle {
     color: $light_blue;
     font-family: $highlight_font;
-    font-size: 1.5em;
+    font-size: 1.7em;
     padding-bottom: 20px;
+  }
+
+  .nav-section__list {
+    list-style: none;
+    display: inline-block;
+  }
+
+  .nav-section__links {
+    text-decoration: none;
+    margin-right: 10px;
+    color: $light-blue;
+    font-family: $main_font;
+    font-weight: 700;
   }
  
 }
 
 .nav-section__button--projects {
-  display: block;
-  position: absolute;
-  z-index: 1;
-  // top: 120px;
+  display: inline-block;
+  text-decoration: none;
   width: 200px;
   height: 25px;
-  margin-left: 85px;
-  text-decoration: none;
   background-color: #f3b54a;
   color: $brown;
   padding-top: 5px;
+  margin-bottom: 20px;
+  text-align: center;
   font-family: $main_font;
   font-weight: bold;
   border: 1px solid $brown;
@@ -66,28 +80,25 @@
 
 }
 
-.nav-section__button--projects:hover {
-  color: transparent;
-  width: 125px;
-  height: 70px;
-  border-radius: 130px;
-  margin-left: 115px;
-  padding-top: 55px;
-}
+// .nav-section__button--projects:hover {
+//   color: transparent;
+//   width: 125px;
+//   height: 70px;
+//   border-radius: 130px;
+//   margin-left: 115px;
+//   padding-top: 55px;
+// }
 
 .footer {
   height: 100px;
   background-color: #222;
 }
 
-#login {
-  position: relative;
-  top: -40px;
-  color: white;
-  z-index: 9;
+.project-section {
+  height: 300px;
+  background-color: $light_blue;
+
 }
-
-
 
 
 

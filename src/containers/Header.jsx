@@ -1,15 +1,12 @@
-import React, { Component } from 'react'
-import people from '../people.jpg'
+import React, { Component } from 'react';
+import people from '../people.jpg';
+import { NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 class Header extends Component {
 
-  handleLoad = () => {
-    const login = document.getElementById('login')
-    login.style.top = "5px"
-  }
-
   componentDidMount() {
-    window.addEventListener('load', this.handleLoad())
+    // window.addEventListener('load', this.handleLoad())
   }
 
   render () {
@@ -23,11 +20,24 @@ class Header extends Component {
           
         <div className="nav-section">
           <nav  className="nav-section__navigation">
-          <a href="#" id="login">Login</a>
-          {/* <a href="#" className="nav-section__button--projects">Open Projects</a> */}
-          <h1 className="nav-section__logo">Build Together</h1>
-          <p className="nav-section__dash">_______________</p>
-          <h3 className="nav-section__subtitle">build better</h3>
+            
+            <h1 className="nav-section__logo">Build Together</h1>
+            <p className="nav-section__dash">_______________</p>
+            <h3 className="nav-section__subtitle">build better</h3>
+
+            <NavLink className="nav-section__button--projects" to="/projects" exact>Open Projects</NavLink>
+            <ul>  
+            
+              <li className="nav-section__list">
+                <NavLink className="nav-section__links" to="/" exact>Home</NavLink>
+              </li>
+              <li className="nav-section__list">
+                <NavLink className="nav-section__links" to="/login" exact>Login</NavLink>
+              </li>
+              <li className="nav-section__list">
+                <NavLink className="nav-section__links" to="/signup" exact>Signup</NavLink>
+              </li>
+            </ul>
           </nav>
         </div>
 

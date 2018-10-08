@@ -1,9 +1,9 @@
-.login-section {
+.form-section {
   background-color: $light-blue;
   padding: 30px;
 }
 
-.login-form__input {
+.form-section__input {
   padding: 7px;
   display: block;
   border: none;
@@ -12,12 +12,22 @@
   margin: 15px 0;
 }
 
-.login-form__button {
+.form-section__error {
+  display: block;
+}
+
+.form-section__button {
+  display: block;
   padding: 7px;
-  border: none;
+  border: 2px solid $brown;
   border-radius: 3px;
-  width: 20%;
+  width: 15%;
   background-color: $brown;
   color: $highlight-blue;
   font-weight: 700;
+}
+
+.form-section__button:hover {
+  color: $brown;
+  background-color: transparent;
 }

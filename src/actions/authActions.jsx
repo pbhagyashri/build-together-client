@@ -7,6 +7,13 @@ const loginSuccess = (user) => {
   }
 }
 
+const signupSuccess = (user) => {
+  return {
+    type: 'SIGNUP',
+    user: user
+  }
+}
+
 const loginFailure = (errors) => {
   return {
     type: 'LOGIN_FAILURE',
@@ -14,8 +21,46 @@ const loginFailure = (errors) => {
   }
 }
 
+const signupFailure = (errors) => {
+  return {
+    type: 'SIGNUP_FAILURE',
+    errors: errors.message
+  }
+}
+
+export const signup = (user, history) => {
+  return dispatch => {
+    return fetch(`${API_URL}/users`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+
+        body: JSON.stringify({user})
+      })
+        .then(res => res.json())
+        .then((response) => {
+          
+          if (response.errors) {
+           
+            throw Error(response.errors);
+          
+          } else{
+            sessionStorage.setItem('Token', response.token);
+            dispatch(signupSuccess(response.user))
+            history.push("/")
+          }
+        })
+        .catch( errors => {
+
+          sessionStorage.clear()
+          dispatch(signupFailure(errors))
+        })
+  }
+
+}
+
 export const login = (user, history) => {
-  debugger
   return dispatch => {
     return fetch(`${API_URL}/sessions`, {
       method: 'POST',
@@ -27,7 +72,6 @@ export const login = (user, history) => {
       })
         .then(res => res.json())
         .then((response) => {
-          debugger
           if (response.errors) {
 
             throw Error(response.errors);

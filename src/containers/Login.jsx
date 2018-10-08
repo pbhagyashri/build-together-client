@@ -36,44 +36,41 @@ class Login extends Component {
     const errors = this.state.errors
     
     return (
-      <section className="login-section">
+      <section className="form-section">
         <div className="row">
         </div>
-        <div className="login-form">
 
-            <div className="login-section__error-div"><span>{errors}</span></div>
-            <h1 className="login-section__title">Please login to get started</h1>
+        <div className="form-section__error-div"><span>{errors}</span></div>
+        <h1 className="form-section__title">Please login to get started</h1>
 
-            <form onSubmit={(event) => this.handleSubmit(event)}>
-            <div className="form-group">
+        <form onSubmit={(event) => this.handleSubmit(event)}>
+        <div className="form-group">
 
-                <label className="login-form__label">Email</label>
-                <input
+            <label className="form-section__label">Email</label>
+            <input
 
-                name="email"
-                className="login-form__input"
-                type="email" placeholder="please enter email"
-                onChange={(event) => this.onInput(event)}
-                value={this.state.email}
-                required
-                />
+            name="email"
+            className="form-section__input"
+            type="email" placeholder="please enter email"
+            onChange={(event) => this.onInput(event)}
+            value={this.state.email}
+            required
+            />
 
-                <label className="login-form__label">Password</label>
-                <input
-                name="password"
-                className="login-form__input"
-                type="password" placeholder="please enter password"
-                onChange={(event) => this.onInput(event)}
-                value={this.state.password}
-                required
-                />
+            <label className="form-section__label">Password</label>
+            <input
+            name="password"
+            className="form-section__input"
+            type="password" placeholder="please enter password"
+            onChange={(event) => this.onInput(event)}
+            value={this.state.password}
+            required
+            />
 
-                <button type="submit" className="login-form__button">Submit</button>
-              </div>
-            </form>
-            <div><span className="login-section__span">Not registered? </span><a className="login-section__links" href="/signup">Signup</a></div>
-         
-        </div>
+            <button type="submit" className="form-section__button">Submit</button>
+          </div>
+        </form>
+        <div><span className="form-section__span">Not registered? </span><a className="form-section__links" href="/signup">Signup</a></div>
       </section>
     )
   }

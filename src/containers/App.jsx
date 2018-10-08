@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import people from '../people.jpg';
 import Projects from './Projects';
 import Login from './Login';
+import Signup from './Signup';
 
 class App extends Component {
   render() {
@@ -17,7 +18,7 @@ class App extends Component {
             <Header />
             <Route path="/projects" component={Projects} />
             <Route path="/login" component={Login} />
-            
+            <Route exact path="/signup" component={Signup} />
             <Footer />
           </div>
         </Router>

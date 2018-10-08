@@ -22,7 +22,7 @@ class Header extends Component {
           <nav  className="nav-section__navigation">
             
             <h1 className="nav-section__logo">Build Together</h1>
-            <p className="nav-section__dash">_______________</p>
+            <span className="nav-section__dash">______________</span>
             <h3 className="nav-section__subtitle">build better</h3>
 
             <NavLink className="nav-section__button--projects" to="/projects" exact>Open Projects</NavLink>

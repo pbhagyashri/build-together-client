@@ -6,6 +6,7 @@ import Header from './Header';
 import Footer from '../components/Footer';
 import people from '../people.jpg';
 import Projects from './Projects';
+import Login from './Login';
 
 class App extends Component {
   render() {
@@ -15,6 +16,8 @@ class App extends Component {
           <div>
             <Header />
             <Route path="/projects" component={Projects} />
+            <Route path="/login" component={Login} />
+            
             <Footer />
           </div>
         </Router>

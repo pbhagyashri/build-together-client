@@ -13,7 +13,6 @@ export default (state = INITIAL_STATE, action) => {
 
   switch (action.type) {
     case 'LOGIN':
-      debugger
       return {
         ...state,
         authenticated: true,
@@ -28,6 +27,23 @@ export default (state = INITIAL_STATE, action) => {
         authenticated: false,
         current_user: {},
         login_errors: action.errors
+      }
+
+    case 'SIGNUP':
+      return {
+        ...state,
+        authenticated: true,
+        current_user: action.user,
+        signup_errors: []
+      }
+
+    case 'SIGNUP_FAILURE':
+      
+      return {
+        ...state,
+        authenticated: false,
+        current_user: {},
+        signup_errors: action.errors
       }
 
     default:

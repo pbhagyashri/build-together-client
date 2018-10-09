@@ -15,9 +15,17 @@ class Signup extends Component {
           passwordError: "",
           passwordConfirmation: "",
           passwordConfirmationError: "",
-          authErrors: ""
+          authErrors: "",
+          errors: ""
       }
 
+    }
+
+    componentDidMount() {
+      window.scroll({
+        top: 450,
+        behavior: "smooth"
+      })
     }
 
     onInput = event => {
@@ -53,6 +61,7 @@ class Signup extends Component {
     }
 
     handleSubmit = event => {
+    
       event.preventDefault();
       //validate form fields
     
@@ -65,19 +74,16 @@ class Signup extends Component {
           email: "",
           password: "",
           passwordConfirmation: "",
-          authErrors: this.props.errors
         })
       }
     }
           
   render() {
     
-    const errors = this.state.authErrors
-    
     return(
       <section className="form-section">
           
-        <div className="form-section__error-div"><span>{errors}</span></div>
+        <div className="form-section__signup-error-div"></div>
         <h1 className="form-section__title">Please Signup to get started</h1>
 
         <form onSubmit={(event) => this.handleSubmit(event)}>
@@ -136,6 +142,7 @@ class Signup extends Component {
 }
 
 const mapStateToProps = ({auth}) => {
+  
   return {
     errors: auth.signup_errors
   }

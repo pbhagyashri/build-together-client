@@ -16,6 +16,11 @@
   display: block;
 }
 
+.form-section__signup-error-div, .form-section__login-error-div {
+  background-color: rgb(228, 78, 78);
+  margin-bottom: 20px;
+}
+
 .form-section__button {
   display: block;
   padding: 7px;

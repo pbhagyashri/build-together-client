@@ -14,6 +14,13 @@ class Login extends Component {
     }
   }
 
+  componentDidMount() {
+    window.scroll({
+      top: 450,
+      behavior: "smooth"
+    })
+  }
+
   onInput = event => {
     this.setState({
       [event.target.name]: event.target.value
@@ -37,10 +44,7 @@ class Login extends Component {
     
     return (
       <section className="form-section">
-        <div className="row">
-        </div>
-
-        <div className="form-section__error-div"><span>{errors}</span></div>
+        <div className="form-section__login-error-div"></div>
         <h1 className="form-section__title">Please login to get started</h1>
 
         <form onSubmit={(event) => this.handleSubmit(event)}>

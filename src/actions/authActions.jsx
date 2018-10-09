@@ -29,6 +29,7 @@ const signupFailure = (errors) => {
 }
 
 export const signup = (user, history) => {
+
   return dispatch => {
     return fetch(`${API_URL}/users`, {
       method: 'POST',
@@ -40,7 +41,6 @@ export const signup = (user, history) => {
       })
         .then(res => res.json())
         .then((response) => {
-          
           if (response.errors) {
            
             throw Error(response.errors);
@@ -52,7 +52,11 @@ export const signup = (user, history) => {
           }
         })
         .catch( errors => {
-
+        
+          const errorDiv = document.getElementsByClassName("form-section__signup-error-div")[0]
+          
+          errorDiv.innerHTML = errors
+          errorDiv.style.padding = '7px'
           sessionStorage.clear()
           dispatch(signupFailure(errors))
         })
@@ -83,7 +87,10 @@ export const login = (user, history) => {
           }
         })
         .catch( errors => {
-
+          const loginerrorDiv = document.getElementsByClassName("form-section__login-error-div")[0]
+          
+          loginerrorDiv.innerHTML = errors
+          loginerrorDiv.style.padding = '7px'
           sessionStorage.clear()
           dispatch(loginFailure(errors))
         })

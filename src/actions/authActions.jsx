@@ -1,5 +1,5 @@
 //const API_URL = "http://192.168.1.190:3001/api"
-const API_URL = "http://build-together-server.herokuapp.com/api"
+const API_URL = "https://build-together-server.herokuapp.com/api"
 
 const loginSuccess = (user) => {
   return {

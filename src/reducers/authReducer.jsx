@@ -4,9 +4,10 @@ const INITIAL_STATE = {
     id: null,
     username: "",
     email: "",
+    user_projects: []
   },
-  login_errors: [],
-  signup_errors: []
+  projects: [],
+  errors: []
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -44,6 +45,20 @@ export default (state = INITIAL_STATE, action) => {
         authenticated: false,
         current_user: {},
         signup_errors: action.errors
+      }
+
+    case 'LOGGEDOUT':
+      return {
+        ...state,
+        authenticated: false,
+        current_user: {},
+      }
+    
+    case 'ADD_ALL_PROJECTS':
+     
+      return {
+        ...state,
+        projects: [...action.projects]
       }
 
     default:

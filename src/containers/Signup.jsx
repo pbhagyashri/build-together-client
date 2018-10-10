@@ -141,17 +141,10 @@ class Signup extends Component {
 
 }
 
-const mapStateToProps = ({auth}) => {
-  
-  return {
-    errors: auth.signup_errors
-  }
-}
-
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
       signup:  signup,
   }, dispatch);
 };
 
-export default connect( mapStateToProps, mapDispatchToProps)(Signup);
+export default connect( null, mapDispatchToProps)(Signup);

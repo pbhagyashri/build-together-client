@@ -15,17 +15,11 @@ const signupSuccess = (user) => {
   }
 }
 
-const loginFailure = (errors) => {
+const fetchProjectSuccess = (projects) => {
+  
   return {
-    type: 'LOGIN_FAILURE',
-    errors: errors.message
-  }
-}
-
-const signupFailure = (errors) => {
-  return {
-    type: 'SIGNUP_FAILURE',
-    errors: errors.message
+    type: 'ADD_ALL_PROJECTS',
+    projects: projects
   }
 }
 
@@ -59,7 +53,7 @@ export const signup = (user, history) => {
           errorDiv.innerHTML = errors
           errorDiv.style.padding = '7px'
           sessionStorage.clear()
-          dispatch(signupFailure(errors))
+          
         })
   }
 
@@ -84,7 +78,7 @@ export const login = (user, history) => {
           } else{
             sessionStorage.setItem('Token', response.token);
             history.push("/")
-            dispatch(loginSuccess(response.user))
+            
           }
         })
         .catch( errors => {
@@ -93,7 +87,36 @@ export const login = (user, history) => {
           loginerrorDiv.innerHTML = errors
           loginerrorDiv.style.padding = '7px'
           sessionStorage.clear()
-          dispatch(loginFailure(errors))
         })
+  }
+}
+
+export const logout = (history) => {
+  return dispatch => {
+      sessionStorage.clear();
+      history.push("/")
+      return dispatch({type: 'LOGGEDOUT'});
+  }
+}
+
+export const fetchProjects = () => {
+  return dispatch => {
+    return fetch(`${API_URL}/projects`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    })
+    .then(res => res.json())
+    .then((response) => {
+      if (response.errors) { 
+        throw Error(response.errors);
+      } else{
+        dispatch(fetchProjectSuccess(response))
+      }
+    })
+    .catch (errors => {
+      console.log(errors)
+    })
   }
 }

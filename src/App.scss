@@ -1,6 +1,7 @@
 
 @import "./styles/variables.scss";
 @import "./styles/form-styles.scss";
+@import "./styles/project-styles.scss";
 
 * {
   margin: 0;
@@ -93,11 +94,6 @@
   background-color: #222;
 }
 
-.project-section {
-  height: 300px;
-  background-color: $light_blue;
-
-}
 
 
 

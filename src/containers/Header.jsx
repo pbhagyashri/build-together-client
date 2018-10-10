@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import people from '../people.jpg';
 import { NavLink } from 'react-router-dom';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router} from 'react-router-dom';
 
 class Header extends Component {
 

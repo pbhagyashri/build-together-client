@@ -40,8 +40,6 @@ class Login extends Component {
 
   render() {
     
-    const errors = this.state.errors
-    
     return (
       <section className="form-section">
         <div className="form-section__login-error-div"></div>
@@ -81,17 +79,10 @@ class Login extends Component {
 
 }
 
-const mapStateToProps = ({auth}) => {
-  
-  return {
-    errors: auth.login_errors
-  }
-}
-
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     login: login,
   }, dispatch);
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(null, mapDispatchToProps)(Login);

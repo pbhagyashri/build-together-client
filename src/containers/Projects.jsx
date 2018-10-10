@@ -11,7 +11,7 @@ class Projects extends Component {
     this.props.fetchProjects()
 
     window.scroll({
-      top: 450,
+      top: 650,
       behavior: "smooth"
     })
   }

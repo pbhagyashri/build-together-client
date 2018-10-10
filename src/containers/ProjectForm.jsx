@@ -21,7 +21,11 @@ class ProjectForm extends Component {
   }//constructor
 
   componentDidMount() {
-
+    
+    window.scroll({
+      top: 650,
+      behavior: "smooth"
+    })
    
     const token = sessionStorage.Token
     
@@ -41,67 +45,69 @@ class ProjectForm extends Component {
   render() {
  
     return (
-      <div className="row create-project-container">
-        <div className="col-sm-6">
-          <h2>Create a new Project</h2>
+      <section className="form-section">
+        
+          <h1 className="form-section__title">Create a new Project</h1>
+
           <form onSubmit={(event) => this.handleProjectSubmit(event)}>
-           <div className="form-group">
-            <label>Name:</label>
+           
+            <label className="form-section__label">Name:</label>
             <input 
             onChange={(event) => this.handleChange(event)}
             name="name"
-            className="form-control"
+            className="form-section__input"
             type="text" 
             placeholder="Please Choose a name"
             value={this.state.name}
+            required
             />
 
-            <label>Technology:</label>
+            <label className="form-section__label">Technology:</label>
             <input 
             onChange={(event) => this.handleChange(event)}
-            className="form-control"
+            className="form-section__input"
             name="technology"
             type="text" 
             placeholder="Please enter the technologies used in your project"
             value={this.state.technology}
+            required
             />
             
-            <label>Description:</label>
+            <label className="form-section__label">Description:</label>
             <textarea
              
             onChange={(event) => this.handleChange(event)}
             name="description"
-            className="form-control" 
+            className="form-section__input" 
             placeholder="Please enter a descriptiong of your project."
             value={this.state.value}
             />
 
-            <label>Duration:</label>
+            <label className="form-section__label">Duration:</label>
             <input 
             onChange={(event) => this.handleChange(event)}
             name="duration"
-            className="form-control"
+            className="form-section__input"
             type="text" 
             placeholder="Please enter the duration of your project"
             value={this.props.duration}
             />
             
-            <label>Github Link:</label>
+            <label className="form-section__label">Github Link:</label>
             <input 
             onChange={(event) => this.handleChange(event)}
             name="github_link"
-            className="form-control"
+            className="form-section__input"
             type="text" 
             placeholder="Please add the link to your project on Github"
             value={this.props.github}
+            required
             />
 
-            <button type="submit" className="btn custom-btn">Submit</button>
-          </div>
+            <button type="submit" className="form-section__button">Submit</button>
+        
           </form>
-        </div>
-        <div className="col-sm-6"></div>
-      </div>
+      </section>
     )
   }
 }

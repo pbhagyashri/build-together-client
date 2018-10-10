@@ -3,6 +3,7 @@ import people from '../people.jpg';
 import { NavLink } from 'react-router-dom';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Logout from './Logout'
+import ProjectForm from './ProjectForm'
 
 class Header extends Component {
 
@@ -26,13 +27,16 @@ class Header extends Component {
             <span className="nav-section__dash">______________</span>
             <h3 className="nav-section__subtitle">build better</h3>
 
-            <NavLink className="nav-section__button--projects" to="/projects" exact>Open Projects</NavLink>
+            <NavLink className="nav-section__button--projects" to="/projects">Open Projects</NavLink>
             <ul>  
               { 
                 sessionStorage.Token ?
               <div>
                 <li className="nav-section__list">
-                  <NavLink className="nav-section__links" to="/" exact>Home</NavLink>
+                  <NavLink className="nav-section__links" to="/">Home</NavLink>
+                </li>
+                <li className="nav-section__list">
+                  <NavLink className="nav-section__links" to="/projects/new">Start a Project</NavLink>
                 </li>
                 <li  className="nav-section__list">
                   <Route className="nav-section__links--logout" path="/" component={Logout}/>

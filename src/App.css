@@ -2,35 +2,33 @@
 .form-section {
   background-color: #6985ac;
   padding: 30px; }
-
-.form-section__input {
-  padding: 7px;
-  display: block;
-  border: none;
-  width: 50%;
-  border-radius: 3px;
-  margin: 15px 0; }
-
-.form-section__error {
-  display: block; }
-
-.form-section__signup-error-div, .form-section__login-error-div {
-  background-color: #e44e4e;
-  margin-bottom: 20px; }
-
-.form-section__button {
-  display: block;
-  padding: 7px;
-  border: 2px solid #1f170f;
-  border-radius: 3px;
-  width: 15%;
-  background-color: #1f170f;
-  color: #5899f5;
-  font-weight: 700; }
-
-.form-section__button:hover {
-  color: #1f170f;
-  background-color: transparent; }
+  .form-section .form-section__title {
+    font-size: 2em;
+    padding-bottom: 20px; }
+  .form-section .form-section__input {
+    padding: 7px;
+    display: block;
+    border: none;
+    width: 50%;
+    border-radius: 3px;
+    margin: 15px 0; }
+  .form-section .form-section__button {
+    display: block;
+    padding: 7px;
+    border: 2px solid #1f170f;
+    border-radius: 3px;
+    width: 15%;
+    background-color: #1f170f;
+    color: #5899f5;
+    font-weight: 700; }
+  .form-section .form-section__button:hover {
+    color: #1f170f;
+    background-color: transparent; }
+  .form-section .form-section__error {
+    display: block; }
+  .form-section .form-section__signup-error-div, .form-section .form-section__login-error-div {
+    background-color: #e44e4e;
+    margin-bottom: 20px; }
 
 .project-section {
   display: grid;

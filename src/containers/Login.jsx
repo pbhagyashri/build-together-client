@@ -46,8 +46,7 @@ class Login extends Component {
         <h1 className="form-section__title">Please login to get started</h1>
 
         <form onSubmit={(event) => this.handleSubmit(event)}>
-        <div className="form-group">
-
+        
             <label className="form-section__label">Email</label>
             <input
 
@@ -70,7 +69,7 @@ class Login extends Component {
             />
 
             <button type="submit" className="form-section__button">Submit</button>
-          </div>
+      
         </form>
         <div><span className="form-section__span">Not registered? </span><a className="form-section__links" href="/signup">Signup</a></div>
       </section>

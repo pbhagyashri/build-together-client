@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { fetchProjects } from '../actions/authActions';
+import { fetchProjects } from '../actions/projectActions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Project from '../components/Project';

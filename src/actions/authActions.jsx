@@ -15,14 +15,6 @@ const signupSuccess = (user) => {
   }
 }
 
-const fetchProjectSuccess = (projects) => {
-  
-  return {
-    type: 'ADD_ALL_PROJECTS',
-    projects: projects
-  }
-}
-
 export const signup = (user, history) => {
 
   return dispatch => {
@@ -99,24 +91,3 @@ export const logout = (history) => {
   }
 }
 
-export const fetchProjects = () => {
-  return dispatch => {
-    return fetch(`${API_URL}/projects`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    })
-    .then(res => res.json())
-    .then((response) => {
-      if (response.errors) { 
-        throw Error(response.errors);
-      } else{
-        dispatch(fetchProjectSuccess(response))
-      }
-    })
-    .catch (errors => {
-      console.log(errors)
-    })
-  }
-}

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import people from '../people.jpg';
 import { NavLink } from 'react-router-dom';
-import { BrowserRouter as Router} from 'react-router-dom';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
+import Logout from './Logout'
 
 class Header extends Component {
 
@@ -27,16 +28,28 @@ class Header extends Component {
 
             <NavLink className="nav-section__button--projects" to="/projects" exact>Open Projects</NavLink>
             <ul>  
-            
-              <li className="nav-section__list">
-                <NavLink className="nav-section__links" to="/" exact>Home</NavLink>
-              </li>
-              <li className="nav-section__list">
-                <NavLink className="nav-section__links" to="/login" exact>Login</NavLink>
-              </li>
-              <li className="nav-section__list">
-                <NavLink className="nav-section__links" to="/signup" exact>Signup</NavLink>
-              </li>
+              { 
+                sessionStorage.Token ?
+              <div>
+                <li className="nav-section__list">
+                  <NavLink className="nav-section__links" to="/" exact>Home</NavLink>
+                </li>
+                <li  className="nav-section__list">
+                  <Route className="nav-section__links--logout" path="/" component={Logout}/>
+                </li>
+                
+              </div> 
+              :
+              <div>
+                <li className="nav-section__list">
+                  <NavLink className="nav-section__links" to="/login" exact>Login</NavLink>
+                </li>
+                <li className="nav-section__list">
+                  <NavLink className="nav-section__links" to="/signup" exact>Signup</NavLink>
+                </li>
+                
+              </div>
+              }
             </ul>
           </nav>
         </div>

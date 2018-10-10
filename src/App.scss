@@ -60,6 +60,21 @@
     color: $light-blue;
     font-weight: 700;
   }
+
+  .nav-section__links--logout {
+    background-color: transparent !important;
+    border: none;
+    font-size: 1em;
+  }
+
+  .nav-section__links--logout:hover {
+    cursor: pointer;
+  }
+
+  .nav-section__links--logout:focus {
+    border: none;
+    outline: none;
+  }
  
 }
 

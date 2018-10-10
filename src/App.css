@@ -96,6 +96,15 @@
     margin-right: 10px;
     color: #6985ac;
     font-weight: 700; }
+  .nav-section .nav-section__links--logout {
+    background-color: transparent !important;
+    border: none;
+    font-size: 1em; }
+  .nav-section .nav-section__links--logout:hover {
+    cursor: pointer; }
+  .nav-section .nav-section__links--logout:focus {
+    border: none;
+    outline: none; }
 
 .nav-section__button--projects {
   display: inline-block;

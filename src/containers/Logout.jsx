@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../actions/authActions'
+import { NavLink } from 'react-router-dom';
 
 class Logout extends Component {
 
@@ -13,7 +14,7 @@ class Logout extends Component {
 
   render() {
     return (
-      <button className="logout-button" onClick={(event) => this.handleLogout(event)}>Logout</button>
+      <button className="nav-section__links nav-section__links--logout" onClick={(event) => this.handleLogout(event)}>Logout</button>
     )
   }
 
